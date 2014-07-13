@@ -774,9 +774,6 @@ service hcidump /system/bin/sh /system/etc/hcidump.sh
     disabled
     oneshot
 
-service charger /charger
-    class charger
-
 # Define fastmmi
 service fastmmi /system/bin/mmi
     user root
@@ -801,11 +798,6 @@ on property:persist.usb.hvdcp.detect=true
 
 on property:persist.usb.hvdcp.detect=false
     stop hvdcp
-
-service charger_monitor /system/bin/charger_monitor
-    user system
-    group system
-    disabled
 
 service qbcharger /charger -m 1
     disabled

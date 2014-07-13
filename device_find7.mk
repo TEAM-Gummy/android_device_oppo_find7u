@@ -104,6 +104,7 @@ PRODUCT_PACKAGES += \
 
 # Charger
 PRODUCT_PACKAGES += \
+    charge_only_mode \
     charger \
     charger_res_images
 
