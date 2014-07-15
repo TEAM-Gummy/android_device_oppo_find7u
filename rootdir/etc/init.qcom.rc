@@ -33,21 +33,26 @@ on early-init
     write /sys/block/mmcblk0/queue/scheduler noop
 
 on init
+    mkdir /mnt/shell/emulated 0777 media_rw media_rw
+    mkdir /storage/emulated 0555 root root
     # Set permissions for persist partition
     mkdir /persist 0771 system system
     # See storage config details at http://source.android.com/tech/storage/
     mkdir /mnt/media_rw/sdcard0 0777 media_rw media_rw
     mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
     mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
-    mkdir /storage/sdcard0 0700 root root
+    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+    symlink /storage/emulated/legacy /storage/sdcard0
     mkdir /storage/sdcard1 0700 root root
     mkdir /storage/usbdisk 0700 root root
-    export EXTERNAL_STORAGE /storage/sdcard0
+    export EXTERNAL_STORAGE /storage/legacy
+    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
+    export EMULATED_STORAGE_TARGET /storage/emulated
     export SECONDARY_STORAGE /storage/sdcard1
 
     # Support legacy paths
-    symlink /storage/sdcard0 /sdcard
-    symlink /storage/sdcard0 /mnt/sdcard
+    symlink /storage/emulated/legacy /sdcard
+    symlink /storage/emulated/legacy /mnt/sdcard
     symlink /storage/sdcard1 /sdcard1
     symlink /storage/sdcard1 /mnt/sdcard1
     symlink /storage/usbdisk /usbdisk
@@ -217,6 +222,8 @@ on fs
 
 # msm specific files that need to be created on /data
 on post-fs-data
+    mkdir /data/media 0770 media_rw media_rw
+    chown media_rw media_rw /data/media
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
 
     # Create the directories used by the Wireless subsystem
@@ -757,7 +764,7 @@ service profiler_daemon /system/bin/profiler_daemon
     group root
     disabled
 
-service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard0 /storage/sdcard0
+service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
 
 service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
