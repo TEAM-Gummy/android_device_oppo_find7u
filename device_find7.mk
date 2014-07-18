@@ -88,7 +88,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     use.voice.path.for.pcm.voip=true \
     audio.offload.gapless.enabled=true \
     qcom.hw.aac.encoder=true \
-    media.aaccodectype=1 \
     tunnel.audio.encode=true \
     media.aac_51_output_enabled=true \
     audio.offload.pcm.enable=true \
