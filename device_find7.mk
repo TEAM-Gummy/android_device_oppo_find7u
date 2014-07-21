@@ -86,6 +86,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     av.offload.enable=true \
     av.streaming.offload.enable=true \
     use.voice.path.for.pcm.voip=true \
+    audio.offload.multiple.enabled=true \
     audio.offload.gapless.enabled=true \
     qcom.hw.aac.encoder=true \
     tunnel.audio.encode=true \
