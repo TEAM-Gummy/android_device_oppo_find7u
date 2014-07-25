@@ -23,7 +23,7 @@
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/oppo/find7/full_find7.mk)
+$(call inherit-product, device/oppo/find7u/full_find7u.mk)
 
 # Enhanced NFC
 $(call inherit-product, vendor/Gummy/config/nfc_enhanced.mk)
@@ -35,7 +35,7 @@ $(call inherit-product, vendor/Gummy/config/common_full_phone.mk)
 TARGET_SCREEN_WIDTH := 1440
 TARGET_SCREEN_HEIGHT := 2560
 
-PRODUCT_NAME := tg_find7
+PRODUCT_NAME := tg_find7u
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_BRAND=OPPO \

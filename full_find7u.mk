@@ -16,10 +16,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from find7 device
-$(call inherit-product, device/oppo/find7/device_find7.mk)
+$(call inherit-product, device/oppo/find7u/device_find7u.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := full_find7
+PRODUCT_NAME := full_find7u
 PRODUCT_DEVICE := find7
 PRODUCT_BRAND := OPPO
 PRODUCT_MANUFACTURER := OPPO
