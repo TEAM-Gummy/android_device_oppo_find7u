@@ -297,6 +297,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += wcnss_service
 
+# ANT+
+PRODUCT_PACKAGES += \
+    libantradio \
+    AntHalService
+
 # Enable Bluetooth HFP service
 PRODUCT_PROPERTY_OVERRIDES +=
     bluetooth.hfp.client=1

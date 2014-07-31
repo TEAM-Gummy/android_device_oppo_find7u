@@ -177,6 +177,9 @@ TARGET_HW_DISK_ENCRYPTION := true
 # Enable CPU boosting events in the power HAL
 TARGET_USES_CPU_BOOST_HINT := true
 
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+
 # Board specific SELinux policy variable definitions
 BOARD_SEPOLICY_DIRS := \
    device/oppo/find7/sepolicy
