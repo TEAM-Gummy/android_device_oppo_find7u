@@ -86,11 +86,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     av.offload.enable=true \
     av.streaming.offload.enable=true \
     use.voice.path.for.pcm.voip=true \
+    audio.offload.multiple.enabled=true \
     audio.offload.gapless.enabled=true \
     qcom.hw.aac.encoder=true \
     tunnel.audio.encode=true \
     media.aac_51_output_enabled=true \
     audio.offload.pcm.enable=true \
+    audio.offload.24bit.enable=1 \
     qemu.hw.mainkeys=1\
     view.scroll_friction=1\
     ro.min_pointer_dur=8\
@@ -294,6 +296,11 @@ PRODUCT_PACKAGES += \
     hostapd_default.conf
 
 PRODUCT_PACKAGES += wcnss_service
+
+# ANT+
+PRODUCT_PACKAGES += \
+    libantradio \
+    AntHalService
 
 # Enable Bluetooth HFP service
 PRODUCT_PROPERTY_OVERRIDES +=

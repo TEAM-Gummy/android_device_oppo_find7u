@@ -51,6 +51,8 @@ TARGET_QCOM_AUDIO_VARIANT := caf
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_DISABLED_DS1_DOLBY_DDP := true
 AUDIO_FEATURE_DISABLED_FM := true
+AUDIO_FEATURE_ENABLED_MULTIPLE_TUNNEL := true
+BOARD_USE_RESAMPLER_IN_PCM_OFFLOAD_PATH := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -175,6 +177,9 @@ TARGET_HW_DISK_ENCRYPTION := true
 
 # Enable CPU boosting events in the power HAL
 TARGET_USES_CPU_BOOST_HINT := true
+
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Board specific SELinux policy variable definitions
 BOARD_SEPOLICY_DIRS := \
