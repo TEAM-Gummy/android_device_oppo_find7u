@@ -93,6 +93,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
     audio.offload.pcm.enable=true \
     audio.offload.24bit.enable=1 \
+    audio.offload.min.duration.secs=0 \
     qemu.hw.mainkeys=1\
     view.scroll_friction=1\
     ro.min_pointer_dur=8\
@@ -268,7 +269,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
+    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
 
 # Torch
 PRODUCT_PACKAGES += \
