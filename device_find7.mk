@@ -24,6 +24,7 @@ PRODUCT_BOOT_JARS += qcmediaplayer
 
 # Feature definition files for 8974
 PRODUCT_COPY_FILES += \
+    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
@@ -299,8 +300,9 @@ PRODUCT_PACKAGES += wcnss_service
 
 # ANT+
 PRODUCT_PACKAGES += \
-    libantradio \
-    AntHalService
+    AntHalService \
+    com.dsi.ant.antradio_library \
+    libantradio
 
 # Enable Bluetooth HFP service
 PRODUCT_PROPERTY_OVERRIDES +=
