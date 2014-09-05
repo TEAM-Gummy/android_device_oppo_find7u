@@ -86,7 +86,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     av.offload.enable=true \
     av.streaming.offload.enable=true \
     use.voice.path.for.pcm.voip=true \
-    audio.offload.multiple.enabled=true \
+    audio.offload.multiple.enabled=false \
     audio.offload.gapless.enabled=true \
     qcom.hw.aac.encoder=true \
     tunnel.audio.encode=true \
@@ -268,7 +268,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
+    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine-8974.conf
 
 # Torch
 PRODUCT_PACKAGES += \

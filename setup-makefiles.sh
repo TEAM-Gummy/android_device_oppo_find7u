@@ -226,7 +226,7 @@ for PRIVAPK in `ls ../../../$OUTDIR/proprietary/priv-app/*apk`; do
   if [ $COUNT = "0" ]; then
     LINEEND=""
   fi
-    privapkname=`basename $APK`
+    privapkname=`basename $PRIVAPK`
     privmodulename=`echo $privapkname|sed -e 's/\.apk$//gi'`
     (cat << EOF) >> ../../../${OUTDIR}/proprietary/priv-app/Android.mk
 include \$(CLEAR_VARS)

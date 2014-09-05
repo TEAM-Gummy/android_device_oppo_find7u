@@ -100,7 +100,7 @@ vendor/lib/mediadrm/libwvdrmengine.so
 bin/hvdcp
 
 # GPS
--app/com.qualcomm.location.apk
+-priv-app/com.qualcomm.location.apk
 bin/gsiff_daemon
 bin/quipc_igsn
 bin/quipc_main
